@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Navbar with Contact Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        /* Section Styles */
+        #content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Client Details Table */
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <a href="#" id="homeLink">Home</a>
+        </div>
+        <div class="links">
+            <a href="#" id="productsLink">Products</a>
+            <a href="#" id="contactLink">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content">
+        <h1>Welcome to Our Website</h1>
+        <p>Click on the navbar links to explore more.</p>
+    </div>
+
+    <script>
+        // References to Navbar Links
+        const homeLink = document.getElementById('homeLink');
+        const productsLink = document.getElementById('productsLink');
+        const contactLink = document.getElementById('contactLink');
+        const contentDiv = document.getElementById('content');
+
+        // Home Page Content
+        const loadHome = () => {
+            contentDiv.innerHTML = `
+                <h1>Welcome to Our Website</h1>
+                <p>Click on the navbar links to explore more.</p>
+            `;
+        };
+
+        // Products Page Content
+        const loadProducts = () => {
+            contentDiv.innerHTML = `
+                <h1>Our Products</h1>
+                <p>Discover a wide range of amazing products.</p>
+            `;
+        };
+
+        // Contact Page Content
+        const loadContact = () => {
+            contentDiv.innerHTML = `
+                <h1>Contact Us</h1>
+                <p>Here are some of our recent clients:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>john.doe@example.com
+                                                            <td>+1 234 567 890</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>jane.smith@example.com</td>
+                            <td>+1 987 654 321</td>
+                        </tr>
+                        <tr>
+                            <td>Mark Johnson</td>
+                            <td>mark.johnson@example.com</td>
+                            <td>+1 555 123 456</td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+        };
+
+        // Event Listeners for Navbar Links
+        homeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadHome();
+        });
+
+        productsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadProducts();
+        });
+
+        contactLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadContact();
+        });
+
+        // Load Home by Default
+        loadHome();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web design final project</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      *{
+        scroll-behavior: smooth;
+      }
+    </style>
+</head>
+<body class="bg-white ">
+    <!-- navbar start -->
+    <div class="flex navbar bg-green-700 z-50 fixed ">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-3xl ">Fretok</a>
+          <div class="form-control w-full">
+            <input type="text" placeholder="Search" class="input input-bordered w-full" />
+          </div>
+        </div>
+        <div class="flex-1 justify-center hidden md:flex">
+            <ul class="flex-1 flex justify-around">
+                <li class="link-hover hover:text-white">Home</li>
+                <li class="link-hover hover:text-white">Discounts</li>
+                <li class="link-hover hover:text-white">Contact</li>
+            </ul>
+        </div>
+
+        <!-- responsive start -->
+        <div class="navbar ml-20 bg-green-700 md:hidden relative w-5 h-5 ">
+          <div class="absolute right-2">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn bg-gray-800 btn-circle ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h7" />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                <li><a>Home</a></li>
+                <li><a>Discounts</a></li>
+                <li><a>Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+         <!-- responsive end -->
+
+        <div class="flex-none gap-2">
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="data:image/jpeg;base64,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" />
+              </div>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <li>
+                <a class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li><a class="link-hover  hover:text-white">Login</a></li>
+              <li><a class="link-hover hover:text-white">Sign up</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+     <!-- navbar end -->
+
+     <!-- cover picture start -->
+     <div
+     class="hero min-h-screen"
+     style="background-image: url('bike_cover_picture.png');">
+     <div class="hero-overlay bg-opacity-60"></div>
+     <div class="hero-content text-neutral-content text-center">
+       <div class="max-w-md">
+         <h1 class="mb-5 text-5xl font-bold text-blue-600">A Piece or Art in MOTION</h1>
+         <p class="mb-5">
+           Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+           quasi. In deleniti eaque aut repudiandae et a id nisi.
+         </p>
+         <button class="btn btn-primary hover:bg-blue-600" ><a href="#go">See The Products</a></button>
+       </div>
+     </div>
+   </div>
+      <!-- cover picture end -->
+
+     <!-- hero start -->
+     <section class="relative bg-gray-900 text-white">
+      <div class="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 py-16">
+        <!-- Left Content -->
+        <div class="md:w-1/2 text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+            Explore Our Collection
+          </h1>
+          <p class="mt-4 text-gray-300 text-lg">
+            Keep track of time effortlessly with our smart bikes. Designed to help you to give a best ride experience.
+          </p>
+          <div class="mt-6">
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg text-lg shadow-lg">
+              Learn More
+            </a>
+            <a href="#" class="ml-4 text-blue-400 hover:underline">Explore Features</a>
+          </div>
+        </div>
+  
+        <!-- Right Content: Watch -->
+        <div class="md:w-1/2 flex justify-center">
+          <!-- Watch Container -->
+          <div class="bg-gray-800 text-white rounded-lg shadow-lg p-6 w-64">
+            <!-- Display -->
+            <div class="bg-gray-700 rounded-md p-4 text-center">
+              <h1 id="time" class="text-4xl font-mono">12:00:00</h1>
+              <p id="date" class="text-sm text-gray-400 mt-2">Monday, January 1</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Script to Display Time and Date -->
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const time = now.toLocaleTimeString();
+        const date = now.toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        });
+  
+        document.getElementById('time').textContent = time;
+        document.getElementById('date').textContent = date;
+      }
+  
+      // Update time every second
+      setInterval(updateTime, 1000);
+      updateTime();
+    </script>
+      <!-- hero end -->
+
+      <!--start product section-->
+    <section class="py-16" id="go">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-extrabold text-blue-600 text-center mb-10">Our Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- end product section -->
+
+      <!-- card start for new products -->
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-500 ease-in-out hover:scale-110">
+        <img src="1st picture.png" alt="Product" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-900">Royal Enfield Classic 350</h3>
+          <p class="text-gray-700 mt-2">500,000 BDT</p>
+          <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-500 ease-in-out hover:scale-110">
+        <img src="2nd picture.png" alt="Product" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-900">YAMAHA R15M ABS SILVER THAI</h3>
+          <p class="text-gray-700 mt-2">7,50,000 BDT</p>
+          <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-500 ease-in-out hover:scale-110">
+        <img src="3rd picture.jpg" alt="Product" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-900">HONDA CBR 150R Victory Red</h3>
+          <p class="text-gray-700 mt-2">600,000 BDT</p>
+          <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-500 ease-in-out hover:scale-110">
+        <img src="4th picture.png" alt="Product" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-900">Suzuki Gixxer Fi ABS</h3>
+          <p class="text-gray-700 mt-2">279,950 BDT</p>
+          <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-500 ease-in-out hover:scale-110 ">
+        <img src="5th picture.png" alt="Product" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-900">HERO KARIZMA XMR 210</h3>
+          <p class="text-gray-700 mt-2">400,000 BDT</p>
+          <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-500 ease-in-out hover:scale-110">
+        <img src="6th picture.png" alt="Product" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-900">TVS 4V</h3>
+          <p class="text-gray-700 mt-2">205,000 BDT</p>
+          <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-500 ease-in-out hover:scale-110">
+        <img src="7th picture.png" alt="Product" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-900">LIFAN K19 Double Disc</h3>
+          <p class="text-gray-700 mt-2">290,030 BDT</p>
+          <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-500 ease-in-out hover:scale-110">
+        <img src="8th picture.jpg" alt="Product" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-900">Zontes ZT 155 GK</h3>
+          <p class="text-gray-700 mt-2">439,000 BDT</p>
+          <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-500 ease-in-out hover:scale-110">
+        <img src="9th picture.jpg" alt="Product" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-900">GPX Demon GR165RR</h3>
+          <p class="text-gray-700 mt-2">374,999 BDT</p>
+          <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+       <!-- card end -->
+
+       <!-- contact field start -->
+       <div class=" flex justify-center items-center min-h-screen">
+        <!-- Contact Form Container -->
+        <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
+            <!-- Form Title -->
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Get in Touch</h2>
+            
+            <!-- Contact Form -->
+            <form action="#" method="POST" class="space-y-6">
+                <!-- Name Field -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">
+                        Full Name
+                    </label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Enter your name"
+                        class="mt-1 block w-full p-3 rounded-md border border-gray-300 shadow-sm 
+                               focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        required
+                    >
+                </div>
+    
+                <!-- Email Field -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">
+                        Email Address
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email"
+                        class="mt-1 block w-full p-3 rounded-md border border-gray-300 shadow-sm 
+                               focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        required
+                    >
+                </div>
+    
+                <!-- Message Field -->
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700">
+                        Message
+                    </label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="4" 
+                        placeholder="Write your message here"
+                        class="mt-1 block w-full p-3 rounded-md border border-gray-300 shadow-sm 
+                               focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        required
+                    ></textarea>
+                </div>
+    
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button 
+                        type="submit" 
+                        class="w-full bg-indigo-600 text-white font-medium py-3 px-4 rounded-lg 
+                               shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 
+                               focus:ring-indigo-500 focus:ring-offset-2 transition duration-300"
+                    >
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+        <!-- contact field end -->
+
+        <!-- footer start -->
+        <footer class="footer footer-center bg-base-100 w-full text-base-content rounded p-10">
+          <nav class="flex gap-4">
+            <a class="link link-hover hover:text-blue-600">About us</a>
+            <a class="link link-hover hover:text-blue-600">Contact</a>
+            <a class="link link-hover hover:text-blue-600">Jobs</a>
+          </nav>
+          <nav>
+            <div class="flex gap-4">
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current">
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                </svg>
+              </a>
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current">
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                </svg>
+              </a>
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current">
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+          <aside>
+            <p>Copyright ©2025 - All right reserved by Fretok Ltd</p>
+          </aside>
+        </footer>
+         <!-- footer end -->
+
+
+</body>
+</html>

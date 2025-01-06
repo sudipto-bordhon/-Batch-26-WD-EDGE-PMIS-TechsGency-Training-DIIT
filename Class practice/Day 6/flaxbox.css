@@ -1,0 +1,14 @@
+body{
+    background-color: bisque;
+}
+.flex-container{
+    background-color: rgb(194, 39, 63);
+    border: 2px solid green;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+
+}
+.flex-container div{
+    border: 2px solid aqua;
+}

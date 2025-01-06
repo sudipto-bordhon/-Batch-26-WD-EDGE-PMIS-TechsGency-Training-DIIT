@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section with Scroll</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background-color: white;
+            color: #2575fc;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #2575fc;
+            color: white;
+        }
+
+        /* New Hero Section Styles */
+        .new-hero {
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            color: white;
+        }
+
+        .new-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .new-hero p {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- First Hero Section -->
+    <section class="hero" id="hero">
+        <div>
+            <h1>Welcome to Our Website</h1>
+            <p>Your success starts here. Let's create something amazing together.</p>
+            <button id="scrollToNewHero">Learn More</button>
+        </div>
+    </section>
+
+    <!-- New Hero Section -->
+    <section class="new-hero" id="new-hero">
+        <div>
+            <h1>Discover More</h1>
+            <p>Explore the endless possibilities and take your journey to the next level.</p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth Scroll to New Hero Section
+        document.getElementById('scrollToNewHero').addEventListener('click', () => {
+            const newHero = document.getElementById('new-hero');
+            newHero.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

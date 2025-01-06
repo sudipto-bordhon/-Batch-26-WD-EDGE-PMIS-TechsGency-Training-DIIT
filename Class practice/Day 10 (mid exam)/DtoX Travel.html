@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dtox Travels</title>
+    <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            /*padding: 30px 100px 0px 100px ;*/
+            padding: 48px 135px 0px 135px ;
+        }
+        nav{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-bottom: 48px;
+        }
+        nav .home-side{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:right;
+            align-items: center;
+            list-style: none;
+            gap: 44px;
+        }
+        .logo-side{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:left;
+            align-items: center;
+            list-style: none;
+            font-size: 36px;
+            font-weight: 800;
+        }
+        .logo-side li{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            align-items:center;
+        }
+        .home-side li:hover{
+            color: rgb(255, 84, 0);
+        }
+
+        .first-box{
+            background-image: url("Group 13 (1) (1).png");
+            width: 100%;
+            height: 500px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: linear-gradient(rgba(19, 19, 24, 0.8)
+            rgba(19, 19, 24, 0));
+            justify-content: center;
+        }
+        .travel{
+            padding: 106px 185px 106px 185px;
+            text-align: center;
+            justify-content: center;
+        }
+        .travel h1{
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 0px 102px 24px 102px ;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-family: 'mulish';
+            font-size: 44px;
+        }
+        .travel p{
+            color: rgb(255, 255, 255);
+            font-family: Mulish;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+            text-align: center;
+            padding: 0px 62px 48px 62px;
+        }
+        .travel form{
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 16px;
+        }
+        form input{
+            padding: 12px;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            color: rgb(255, 255, 255);
+        }
+        .travel form select{
+            padding: 12px;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+
+        }
+
+        .top {
+            padding: 100px 0px 0px 0px;
+        }
+
+        .top h2 {
+            text-align: center;
+            color: rgb(255, 84, 0);
+            font-family: Mulish;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .top-three {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .place {
+            text-align: center;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .place img {
+            width: 300px;
+            height: 250px;
+            object-fit: fill;
+            border-radius: 5px;
+            transition: .7s all ease-in-out;
+        }
+        .place img:hover{
+            height:300px;
+            width: 350px;
+        }
+        .second-box{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 100px 0px 100px 0px;
+        }
+        #popular-tour{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 45%;
+        }
+        #popular-tour li{
+            margin-bottom: 25px;
+        }
+        #popular-tour button{
+            background-color:rgb(255, 84, 0);;
+            border-radius: 8px;
+            color: rgb(255, 255, 255);
+            font-family: 'Mulish';
+            width: 174px;
+            height: 52px;
+            text-align: center;
+            padding: 5px;
+            font-size: 20px;
+            border: none;
+        }
+        .third-box{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            padding: 100px 0px 48px 0px;
+        }
+        .third-box p{
+            color: rgba(19, 19, 24, 0.7);
+            font-family: 'Mulish';
+            font-size: 16px;
+        }
+        .maldive{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width:100%;
+            height: 250px;
+            gap: 4px;
+        }
+        .mal{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-image: url('Rectangle 5.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 49%;
+            height: 250px;
+            color: rgb(255, 255, 255);
+            font-family: 'Mulish';
+            font-size: 28px;
+            border-radius: 16px;
+        }
+        .ind{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-image: url('Rectangle 8.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 49%;
+            height: 250px;
+            color: rgb(255, 255, 255);
+            font-family: 'Mulish';
+            font-size: 28px;
+            border-radius: 16px;
+        }
+
+        .sri{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width:100%;
+            height:250px;
+            gap: 4px;
+            padding: 18px 0px 18px 0px;
+        }
+        .srilanka{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-image: url('Rectangle 6.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 29%;
+            height: 250px;
+            color: rgb(255, 255, 255);
+            font-family: 'Mulish';
+            font-size: 28px;
+            border-radius: 16px;
+        }
+        .north-america{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-image: url('Rectangle 7.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 40%;
+            height: 250px;
+            color: rgb(255, 255, 255);
+            font-family: 'Mulish';
+            font-size: 28px;
+            border-radius: 16px;
+        }
+        .kashmir{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-image: url('Rectangle 9.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 29%;
+            height: 250px;
+            color: rgb(255, 255, 255);
+            font-family: 'Mulish';
+            font-size: 28px;
+            border-radius: 16px;
+        }
+        .ban{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width:100%;
+            height: 250px;
+            gap: 4px;
+            padding: 18px 0px 0px 0px;
+            margin-top: 16px;
+        }
+        .bangladesh{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-image: url('Rectangle 11.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 39%;
+            height: 250px;
+            color: rgb(255, 255, 255);
+            font-family: 'Mulish';
+            font-size: 28px;
+            border-radius: 16px;
+        }
+        .bandarban{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-image: url('Rectangle 10.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 59%;
+            height: 250px;
+            color: rgb(255, 255, 255);
+            font-family: 'Mulish';
+            font-size: 28px;
+            border-radius: 16px;
+        }
+        input[type="submit"]{
+            background-color: #ff5400;
+        }
+
+        .tour,.video{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: start;
+            height: 500px;
+            margin-top: 80px;
+            row-gap: 12px;
+        }
+
+        .tour .left,.video .left{
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
+            text-align:left;
+            width:55%;
+            height: 100%;
+            overflow: hidden;
+        }
+         h2{
+            font-size: 40px;
+        }
+        .tour .right,.video .right{
+            width: 45%;
+            height: 100%;
+        }
+
+        .tour img,.video video{
+            object-fit: fill;
+            height: 100%;
+            width: 100%;
+        }
+
+
+        .tour ul ,.video ul{
+             margin:0px 30px; 
+            padding-right:50px;
+        }
+        .tour ul li,.video ul li{
+            margin-bottom: 10px;
+        }
+         button{
+            width: 174px;
+            height: 52px;
+            padding: 10px;
+            background-color: #ff5400;
+            border-radius: 8px;
+            border: none;
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+        }
+        .choose p{
+            font-family: 'Mulish';
+            font-size: 28px;
+            color: rgba(19, 19, 24, 0.7);
+            font-size: 13px;
+        }
+        .destination,.choose,.deals{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 100px;
+        }
+        .deals p{
+            font-family: 'Mulish';
+            font-size: 28px;
+            color: rgba(19, 19, 24, 0.7);
+            font-size: 12px;
+        }
+        .destination .content,.choose .content,.deals .content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width:600px;
+            margin-bottom: 30px;
+        }
+
+        .destination .gallery,.choose .choose-card{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            align-items:start;
+            width:100%;
+            gap:10px
+        }
+
+        .image-container img{
+            object-fit:fill;
+            height:100%;
+            width:100%;
+        }
+        .destination .gallery .image-container{
+            flex: 1;
+            height:350px;
+            min-width: 300px;
+            position: relative;
+            display: inline-block;
+        }
+
+         .image-container::after{
+            content: attr(set-data); 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            color: white;
+            font-size: 28px; 
+            background-color: rgba(0, 0, 0, 0.5); 
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            text-align: center;
+       }
+
+
+        .choose .card{
+            flex: 1  300px;
+            width: 400px;
+            border-radius: 5px;
+            background-color: rgb(218, 213, 213);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items:start;
+             row-gap: 20px;
+        }
+
+        .card img{
+            width: 70px;
+            height: 70px;
+        }
+
+        .deals-card{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:right;
+            align-items: center;
+            width: 100%;
+            background-image: url("Images/Group 39.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            min-height: 450px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .deals-card:nth-child(odd){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:left;
+            align-items: center;
+        }
+        .deals-card .inner-card{
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
+            align-items: start;
+            width: min(90%,500px);
+            min-height: 300px;
+            background-color: rgba(240, 248, 255,0.8);
+            padding: 20px 50px;
+            border-radius: 8px;
+        }
+
+        .video li{
+            color:black;
+            font-weight: bold;
+        }
+        video{
+           overflow: hidden;
+           border-radius: 8px;
+        }
+        .newsletter{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top:50px;
+            gap: 12px;
+        }
+        .newsletter .left{
+            flex: 1 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-around;
+            align-items: start;
+            height: 350px;
+            border: 1px solid #ff8400;
+            border-radius: 8px;
+            padding: 30px 50px 30px 50px;
+            width:40%;
+        }
+        .newsletter  form{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 15px;
+            align-items:start;
+            width: 100%;
+        }
+
+        .newsletter  form input[type='text'],.newsletter  form input[type='email']{
+            background-color: rgb(211, 211, 211);
+            width: 100%;
+            padding: 8px;
+        }
+
+        .newsletter  form input[type='submit']{
+            width: 100%;
+            padding: 8px;
+            font-size: medium;
+        }
+        .newsletter .right{
+            flex: 1 400px;
+            background-image: url("Images/Rectangle 8 (1).png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            height: 350px;
+            width: 55%;
+            position:relative;
+        }
+        .newsletter .right .text{
+            background-color: #ff5400;
+            width: 250px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            font-size: x-large;
+            border-radius: 10px;
+            position:absolute;
+            right:10px;
+            bottom: 50px;
+            transform: rotate(-25deg);
+        }
+        footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 100px;
+            background-color: rgb(232, 236, 240);
+        }
+
+        footer .footer-text{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5px;
+            width: min(600px,100%);
+            font-size:small;
+            column-gap: 10px;
+            background-color: rgb(239, 234, 227);
+            border-bottom: 2px solid gray;
+            background-color: transparent;
+
+        }
+
+        footer img{
+            width: 30px;
+            height: 30px;
+        }
+        .copyright{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .icon{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            align-items: start;
+            column-gap: 8px;
+            font-size: smaller;
+            width: 100%;
+        }
+
+        .icon img{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            mix-blend-mode: multiply;
+            background-color: #ff5400;
+        }
+
+        .icon span{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            align-items: center;
+        }
+        h4{
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+  <!-- Start navbar -->
+    <nav>
+        <ul class="logo-side">
+            <li><img src="Group 40071 (2).png"  alt="">Dtox<span style="color: rgb(255, 84, 0);">Travels</span></li>
+        </ul>
+        <ul class="home-side">
+            <li>Home</li>
+            <li>Packages</li>
+            <li>Testimonial</li>
+            <li>Blog</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+  <!-- End navbar -->
+
+  <!-- Start first box "Explore Your Travel"-->
+    <div class="first-box">
+        <div class="travel">
+        <h1>Explore Your Travel</h1>
+        <p>Dolor sit amet consectetur. Nullam suspendisse vitae ultricies dolor adipiscing. In et odio enim ac quis sapien urna eu phasellus.</p>
+            <form>
+                <input type="text" placeholder="Where go">
+                <select name="" id="">
+                    <option value="">When</option>
+                    <option value="">Morning</option>
+                    <option value="">Evining</option>
+                    <option value="">Night</option>
+                 </select>
+                 <select name="" id="">
+                  <option value="">Select type</option>
+                  <option value="">Morning</option>
+                  <option value="">Night</option>
+               </select>
+                <input style="background-color: rgb(255, 84, 0);" type="submit" value="Find Now">
+            </form>
+        </div>
+    </div>
+    <!-- End First box -->
+
+     <!-- Start creative box -->
+    <div class="top">
+        <h2>Top Destinations</h2>
+        <div class="top-three">
+            <div class="place">
+                <img src="Rectangle 5.png" alt="">
+                <h3>Maldives</h3>
+            </div>
+            <div class="place">
+                <img src="Rectangle 11.png" alt="">
+                <h3>Bangladesh</h3>
+            </div>
+            <div class="place">
+                <img src="Rectangle 9.png" alt="">
+                <h3>Kashmir</h3>
+            </div>
+        </div>
+    </div>
+   <!-- End creative box -->
+
+    <!-- Start 2nd box "Our Popular Tours" -->
+     <div class="second-box">
+        <div id="popular-tour">
+        <h1>Our Popular Tours</h1>
+            <p>Dolor sit amet consectetur. Diam volutpat neque habitasse pharetra odio sit massa. Sodales dictumst nec nibh pellentesque.</p>
+            <ul>
+                <li>Tempus euismod lacus mauris dignissim quis in ultrices. Magna nullam odio neque diam. Sociis erat at .</li>
+                <li>Adipiscing ornare pellentesque mauris volutpat tortor vitae platea porta lacus. Lectus suspendisse nullam.</li>
+                <li>Accumsan eget et turpis praesent lorem egestas enim elit bibendum. Risus at in.</li>
+            </ul>
+            <p>Amet consectetur. Vulputate commodo felis molestie risus ornare nulla amet et. Libero commodo sagittis dignissim adipiscing quis. Habitant adipiscing risus natoque aliquet. Id bibendum nunc senectus semper tincidunt.</p>
+        <button>Read More</button>
+        </div>
+     <div>
+        <img src="Rectangle 4.png" alt="">
+     </div>
+     <!-- End 2nd box -->
+
+
+     <!-- third box choose your destination-->
+      <div class="third-box">
+        <h1>Choose Your Destination</h1>
+        <p>Dolor sit amet consectetur. Diam volutpat neque habitasse pharetra odio sit massa. Sodales dictumst nec nibh pellentesque.</p>
+      </div>
+     <!-- third box end -->
+
+     <!-- 4th box start 'pictures' -->
+      <div class="maldive">
+            <div class="mal">Maldive</div>
+            <div class="ind">Indonesia</div>
+      </div>
+
+      <div class="sri">
+        <div class="srilanka">Srilanka</div>
+        <div class="north-america">North America</div>
+        <div class="kashmir">Kashmir</div>
+      </div>
+
+      <div class="ban">
+        <div class="bangladesh">Bangladesh</div>
+        <div class="bandarban">Bandarban</div>
+      </div>
+
+      <!-- start 5th box -->
+         <section class="choose">
+            <div class="content">
+              <h2>Why Choose Us</h2>
+              <p> Dolor sit amet consectetur. Diam volutpat neque habitasse pharetra odio sit massa. 
+                  Sodales dictumst nec nibh pellentesque.</p>
+            </div>
+
+            <div class="choose-card">
+               <div class="card">
+                    <img src="Images\hotel.png" alt="">
+                    <h3> Handpicked Hotels</h3>
+                    <p> Amet consectetur. Vulputate commodo felis molestie risus  ornare 
+                      nulla amet et. Libero commodo sagittis dignissim adipiscing quis. 
+                      Habitant adipiscing risus natoque aliquet. </p>
+               </div>
+
+               <div class="card">
+                  <img src="Images\google-maps_2335353.png" alt="">
+                  <h3>World Class Service</h3>
+                  <p> Amet consectetur. Vulputate commodo felis molestie risus  ornare 
+                      nulla amet et. Libero commodo sagittis dignissim adipiscing quis. 
+                      Habitant adipiscing risus natoque aliquet.</p>
+               </div>
+
+
+               <div class="card">
+                  <img src="Images\price-list_10103273.png" alt="">
+                  <h3>Best Price Guarantee</h3>
+                  <p> Amet consectetur. Vulputate commodo felis molestie risus  ornare 
+                      nulla amet et. Libero commodo sagittis dignissim adipiscing quis. 
+                      Habitant adipiscing risus natoque aliquet.</p>
+               </div>
+                 
+            </div>
+
+       </section>
+<!--End 5th box-->
+
+<!-- deals start -->
+
+   <section class="deals">
+       <div class="content">
+          <h2>Deals & Discounts</h2>
+          <p>Dolor sit amet consectetur. Diam volutpat neque habitasse pharetra odio sit massa. 
+              Sodales dictumst nec nibh pellentesque.</p>
+       </div>
+
+       <div class="deals-card">
+           <div class="inner-card">
+              <div class="icon">
+                  <span><img src="Images\clock.png" alt=""> 7Day/6Night</span>
+                  <span><img src="Images\managers.png" alt=""> Max:10</span>
+                  <span><img src="Images\navigation.png" alt=""> Malaysia</span>
+               </div>
+              <h3> Tour To Satorini</h3>
+              <p>Amet consectetur. Vulputate commodo felis 
+                  molestie risus  ornare nulla amet et. Libero commodo sagittis 
+                  dignissim adipiscing quis. Habitant adipiscing. </p>
+              <h4  id="clr">Price: $1300-$1500</h4>
+              <button type="button">Book Now</button>  
+           </div>
+       </div>
+       <div class="deals-card">
+          <div class="inner-card">
+              <div class="icon">
+                  <span><img src="Images\clock.png" alt=""> 7Day/6Night</span>
+                  <span><img src="Images\managers.png" alt=""> Max:10</span>
+                  <span><img src="Images\navigation.png" alt=""> Malaysia</span>
+               </div>
+              <h3> Tour To Satorini</h3>
+              <p>Amet consectetur. Vulputate commodo felis 
+                  molestie risus  ornare nulla amet et. Libero commodo sagittis 
+                  dignissim adipiscing quis. Habitant adipiscing.</p>
+              <h4 id="clr">Price: $1300-$1500</h4>
+              <button type="button">Book Now</button>  
+          </div>
+       </div>
+       <div class="deals-card">
+          <div class="inner-card">
+              <div class="icon">
+                  <span><img src="Images\clock.png" alt=""> 7Day/6Night</span>
+                  <span><img src="Images\managers.png" alt=""> Max:10</span>
+                  <span><img src="Images\navigation.png" alt=""> Malaysia</span>
+               </div>
+              <h3> Tour To Satorini</h3>
+              <p>Amet consectetur. Vulputate commodo felis 
+                  molestie risus  ornare nulla amet et. Libero commodo sagittis 
+                  dignissim adipiscing quis. Habitant adipiscing.</p>
+              <h4 id="clr">Price: $1300-$1500</h4>
+              <button type="button">Book Now</button>  
+          </div>
+       </div>
+       <button type="button" style="width:220px;">See All Section</button>
+   </section>
+<!-- deals end -->
+
+<!-- video section start-->
+    <section class="video">
+         <div class="left">
+          <h2> A Simple Perfect Place 
+              To Get Lost</h2>
+          <p>Amet consectetur. Vulputate commodo felis molestie risus  ornare nulla 
+          amet et. Libero commodo sagittis dignissim adipiscing quis. </p>
+           <ul>
+               <li>Adipiscing ornare pellentesque mauris volutpat tortor vitae 
+                  platea porta lacus. Lectus suspendisse nullam.</li>
+
+               <li>Adipiscing ornare pellentesque mauris volutpat tortor vitae 
+                  platea porta lacus. Lectus suspendisse nullam.</li>
+           </ul>
+           <button type="button">Read More</button>    
+       </div>
+
+       <div class="right">
+           <video controls src="Images\6981411-hd_1920_1080_25fps.mp4" alt=""></video>
+       </div>
+    </section>
+<!-- video section end-->
+
+<!-- news letter start -->
+<section class="newsletter">
+       <div class="left">
+            <h3>Newsletter</h3>
+            <p>Get your daily dose of travel news & tips. Sign 
+              up today!</p>
+              <form action="">
+                  <input type="text" placeholder="Enter your name">
+                  <input type="email"name="" id="" placeholder="Enter your email">
+                  <input type="submit" value="Subscribe">
+              </form>
+       </div>
+       <div class="right">
+            <div class="text">
+              <p>Travel.com</p>
+              <h4>Save up to 70%</h4>
+            </div>
+       </div>
+</section>
+<!-- news letter end -->
+
+<!-- footer start -->
+     <footer>
+         <div class="footer-text">
+              <span id="logo" style="font-size: x-large;"> <img src="Images\Group 40071 (2).png" alt="logo">Kinggo bd <span id="clr"> Travels</span></span>
+              <p>Lorem ipsum dolor sit amet consectetur. Nulla sit viverra morbi vitae blandit orci potenti vulputate. Leo 
+                  erat maecenas vitae elementum ultricies nullam. </p>
+
+                  <img src="Images\facebook.png" alt="">
+
+                  <img src="Images\instagram.png" alt="">
+
+                  <img src="Images\linkedin.png" alt="">
+
+                  <img src="Images\social.png" alt="">
+
+         </div>
+         <div class="copyright">
+             <span>@2024, All Rights Reserved</span>
+         </div>
+     </footer>
+ <!-- footer end -->
+
+</body>
+</html>

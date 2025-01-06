@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Watch</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .clock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-size: 3rem;
+        }
+
+        .time {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="time" id="time">00:00:00</div>
+        <div class="date" id="date">Loading...</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            
+            // Format Time
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const time = `${hours}:${minutes}:${seconds}`;
+
+            // Format Date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const date = now.toLocaleDateString(undefined, options);
+
+            // Update the clock
+            document.getElementById('time').textContent = time;
+            document.getElementById('date').textContent = date;
+        }
+
+        // Update clock every second
+        setInterval(updateClock, 1000);
+
+        // Initialize the clock immediately
+        updateClock();
+    </script>
+</body>
+</html>

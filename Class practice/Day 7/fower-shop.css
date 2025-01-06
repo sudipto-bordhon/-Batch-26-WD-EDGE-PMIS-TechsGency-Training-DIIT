@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "lato",sans-serif;
+}
+
+#banner-container{
+    background: green;
+}
+
+.banner{
+    display: flex;
+    padding: 50px 240px 0px;
+    position: relative ;
+    background: rgb(255, 226, 244);
+}
+
+.banner-title{
+    font-size: 80px;
+    font-weight: 800;
+}
+
+.section-para{
+    margin: 32px 0;
+    width: 634;
+}
+
+.banner-btn{
+    color: white;
+    font-size:  20px;
+    font-weight: 700;
+    background: rgb(232, 71, 98);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+.body{
+    text-align: center;
+}
+img{
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+}
